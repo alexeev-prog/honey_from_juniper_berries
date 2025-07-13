@@ -54,6 +54,9 @@ define gui.interface_text_color = u'#3c1f14'
 
 ## Fonts and Font Sizes ########################################################
 
+define gui.text_cps = 40
+define gui.nvl_text_cps = 40
+
 ## The font used for in-game text.
 define gui.text_font = "gui/font/text.ttf"
 

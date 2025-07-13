@@ -108,7 +108,8 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
 
-        text what id "what"
+        text what id "what":
+            slow_cps gui.text_cps
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -877,6 +878,7 @@ screen history():
                     $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                     text what:
                         substitute False
+                        slow_cps gui.text_cps
 
                     if h.who:
                         text "— " + h.who xalign 1.0 text_align 1.0
@@ -1184,14 +1186,11 @@ style skip_triangle:
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
 
 screen notify(message):
-
     zorder 100
     style_prefix "notify"
-
     frame at notify_appear:
-        text "[message!tq]"
-
-    timer 3.25 action Hide('notify')
+        text "[message!tq]":
+            slow_cps gui.text_cps
 
 
 transform notify_appear:
@@ -1255,22 +1254,17 @@ screen nvl(dialogue, items=None):
 
 
 screen nvl_dialogue(dialogue):
-
     for d in dialogue:
-
         window:
             id d.window_id
-
             fixed:
                 yfit gui.nvl_height is None
-
                 if d.who is not None:
-
                     text d.who:
                         id d.who_id
-
                 text d.what:
                     id d.what_id
+                    slow_cps (0 if _in_replay or config.skipping else gui.nvl_text_cps)
 
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
@@ -1289,8 +1283,7 @@ style nvl_button_text is button_text
 style nvl_window:
     xfill True
     yfill True
-
-    background "gui/nvl.png"
+    background Solid("#ebdbb2cc")
     padding gui.nvl_borders.padding
 
 style nvl_entry:
@@ -1446,3 +1439,21 @@ style slider_slider:
 init python:
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
+
+transform fade_in:
+    alpha 0
+    linear 0.5 alpha 1.0
+
+
+define config.enter_transition = Dissolve(0.25)
+define config.exit_transition = Dissolve(0.25)
+define config.intra_transition = Dissolve(0.25)
+define config.window_show_transition = Dissolve(0.15)
+define config.window_hide_transition = Dissolve(0.15)
+
+define config.nvl_paged_rollback = True
+define config.adv_nvl_transition = None
+define config.nvl_page_ctc = None  # Убрать индикатор продолжения
+define config.nvl_page_ctc_position = "nestled"  # Позиция индикатора
+define config.allow_skipping = True  # Разрешить пропуск
+define config.skip_delay = 75  # Задержка перед пропуском
