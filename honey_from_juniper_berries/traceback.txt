@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 35, in script
+    extend """[player_name] сидел в душном подвале конторы в городе Винмор, перебирая кипы пожелтевших (и не очень) бумаг. Счёты в его руках разбивали тишину своим монотонным пощелкиванием.
+  File "renpy/common/00library.rpy", line 210, in __call__
+    what = _last_say_what + config.extend_interjection + _last_raw_what
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 35, in script
+    extend """[player_name] сидел в душном подвале конторы в городе Винмор, перебирая кипы пожелтевших (и не очень) бумаг. Счёты в его руках разбивали тишину своим монотонным пощелкиванием.
+  File "/nix/store/jrq8zj3xplxdf1fhmxhdb43pl7pq2agg-renpy-8.3.7.25031702/share/renpy/renpy/ast.py", line 2586, in execute
+    Say.execute(self)
+  File "/nix/store/jrq8zj3xplxdf1fhmxhdb43pl7pq2agg-renpy-8.3.7.25031702/share/renpy/renpy/ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/nix/store/jrq8zj3xplxdf1fhmxhdb43pl7pq2agg-renpy-8.3.7.25031702/share/renpy/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "renpy/common/00library.rpy", line 210, in __call__
+    what = _last_say_what + config.extend_interjection + _last_raw_what
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+Linux-6.12.34-x86_64-with-glibc2.40 x86_64
+Ren'Py 8.3.7.25031702+unofficial
+Honey from juniper berries 1.0
+Sun Jul 13 22:44:05 2025
