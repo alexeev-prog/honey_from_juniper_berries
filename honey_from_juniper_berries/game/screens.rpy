@@ -653,6 +653,7 @@ screen about():
         xmaximum 400
         text _("Credits:\n-{a=https://incompetech.filmmusic.io/song/4371-skye-cuillin/}Skye Cuillin{/a} by Kevin MacLeod\nLicense: {a=https://filmmusic.io/standard-license/}https://filmmusic.io/standard-license{/a}")
         text _("\n-{a=https://incompetech.filmmusic.io/song/4467-teller-of-the-tales/}Teller of tales{/a} by Kevin MacLeod\nLicense: {a=https://filmmusic.io/standard-license/}https://filmmusic.io/standard-license{/a}")
+        text _("\nMusic by JP Soundworks {a=https://www.youtube.com/c/JPSoundworks/}")
 
         text _("\nШаблон сделан Skolaztika")
 
