@@ -1004,8 +1004,8 @@ screen mouse_help():
             label _("Right Click")
             text _("Accesses the game menu.")
         vbox:
-             label _("Mouse Wheel Up\nClick Rollback Side")
-             text _("Rolls back to earlier dialogue.")
+            label _("Mouse Wheel Up\nClick Rollback Side")
+            text _("Rolls back to earlier dialogue.")
         vbox:
             label _("Mouse Wheel Down")
             text _("Rolls forward to later dialogue.")
@@ -1442,3 +1442,7 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+init python:
+    config.window_hide_transition = dissolve
+    config.window_show_transition = dissolve
