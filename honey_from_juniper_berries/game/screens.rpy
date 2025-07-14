@@ -1445,15 +1445,15 @@ transform fade_in:
     linear 0.5 alpha 1.0
 
 
-define config.enter_transition = Dissolve(0.25)
-define config.exit_transition = Dissolve(0.25)
-define config.intra_transition = Dissolve(0.25)
-define config.window_show_transition = Dissolve(0.15)
-define config.window_hide_transition = Dissolve(0.15)
+define config.enter_transition = Dissolve(0.2)
+define config.exit_transition = Dissolve(0.2)
+define config.intra_transition = Dissolve(0.2)
+define config.window_show_transition = Dissolve(0.1)
+define config.window_hide_transition = Dissolve(0.1)
 
 define config.nvl_paged_rollback = True
 define config.adv_nvl_transition = None
-define config.nvl_page_ctc = None  # Убрать индикатор продолжения
-define config.nvl_page_ctc_position = "nestled"  # Позиция индикатора
-define config.allow_skipping = True  # Разрешить пропуск
-define config.skip_delay = 75  # Задержка перед пропуском
+define config.nvl_page_ctc = None
+define config.nvl_page_ctc_position = "nestled"
+define config.allow_skipping = True
+define config.skip_delay = 50
