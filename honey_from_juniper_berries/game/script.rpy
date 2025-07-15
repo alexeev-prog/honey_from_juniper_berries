@@ -85,11 +85,7 @@ label start:
 
     scene bg_basement with dissolve
 
-    show screen game_interface
-
     $ player_name = renpy.input("Введите ваше имя:").strip()
-
-    $ add_coins(5, "Монеты в кармане")
 
     while player_name == "" or len(player_name) > 16:
         if player_name == "":
